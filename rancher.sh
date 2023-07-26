@@ -133,9 +133,9 @@ sudo cp /etc/rancher/rke2/rke2.yaml ~/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 # Test Kubectl command
-node_ready=$(kubectl get nodes --no-headers | awk '{print $2}')
 while true
 do
+    node_ready=$(kubectl get nodes --no-headers | awk '{print $2}')
     if [ "$node_ready" != "Ready" ]
     then
         print_color "red" "Node isn't ready yet"
