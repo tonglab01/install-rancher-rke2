@@ -76,6 +76,10 @@ progress-bar() {
 
 echo "---------------- Setup Rancher Server ------------------"
 
+# Add domain to hostsfile
+ip_addr=$(hostname -I | awk '{print $1}')
+echo -e "\n\n$ip_addr console-rancher.local" >> /etc/hosts
+
 # Update OS Pathch
 print_color "purple" "Update OS Patch.. "
 apt update -y && apt upgrade -y
@@ -204,7 +208,7 @@ sleep 5
 # Check rancher status
 while true
 do 
-  curl -kv https://rancher.local 2>&1 | grep -q "dynamiclistener-ca"
+  curl -kv https://console-rancher.local 2>&1 | grep -q "dynamiclistener-ca"
     if [ $? != 0 ]
         then print_color "red" "Rancher isn't ready yet"
         sleep 5
