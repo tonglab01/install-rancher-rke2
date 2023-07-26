@@ -5,7 +5,8 @@
 # Arguments:
 #   Color. eg: green, red
 #######################################
-function print_color(){
+function print_color()
+{
   NC='\033[0m' # No Color
 
   case $1 in
