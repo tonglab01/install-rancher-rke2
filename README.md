@@ -186,6 +186,10 @@ deployment "cert-manager-webhook" successfully rolled out
 Install Rancher
 We will now install Rancher in HA mode onto our Rancher01 Kubernetes cluster. The following command will add rancher-latest as a helm repository.
 
+```bash
+helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
+```
+
 helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
  Click to run on Rancher01
 Finally, we can install Rancher using our helm install command.
