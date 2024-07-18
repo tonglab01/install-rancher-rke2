@@ -113,7 +113,7 @@ check_service_status nfs-server
 # Install RKE2 service
 print_color "purple" "Installing RKE2 service.. "
 sudo bash -c 'curl -sfL https://get.rke2.io | \
-  INSTALL_RKE2_CHANNEL="v1.24" \
+  INSTALL_RKE2_CHANNEL="v1.28" \
   sh -'
 sudo mkdir -p /etc/rancher/rke2
 sudo bash -c 'echo "write-kubeconfig-mode: \"0644\"" > /etc/rancher/rke2/config.yaml'
