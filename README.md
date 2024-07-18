@@ -149,7 +149,7 @@ Now, we can install cert-manager:
 helm install \
   cert-manager jetstack/cert-manager \
   --namespace cert-manager \
-  --version v1.11.0 \
+  --version v1.15.1 \
   --set installCRDs=true \
   --create-namespace
 ```
@@ -190,7 +190,7 @@ We will now install Rancher in HA mode onto our Rancher01 Kubernetes cluster. Th
 helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
 ```
 
-helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
+helm repo add rancher-stable https://releases.rancher.com/server-charts/stable
  Click to run on Rancher01
 Finally, we can install Rancher using our helm install command.
 
@@ -199,7 +199,7 @@ helm install rancher rancher-latest/rancher \
   --namespace cattle-system \
   --set hostname=rancher.34.244.231.92.sslip.io \
   --set replicas=1 \
-  --version 2.7.4 \
+  --version 2.8.5 \
   --create-namespace
 ```
 
