@@ -182,7 +182,7 @@ helm install \
   cert-manager jetstack/cert-manager \
   --namespace cert-manager \
   --version v1.15.1 \
-  --set installCRDs=true \
+  --set crds.enabled=true \
   --create-namespace
 progress-bar 20
 # Check Status Certi-manager
