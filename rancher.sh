@@ -181,7 +181,7 @@ print_color "green" "Installing Cert-manager.. "
 helm install \
   cert-manager jetstack/cert-manager \
   --namespace cert-manager \
-  --version v1.11.0 \
+  --version v1.15.1 \
   --set installCRDs=true \
   --create-namespace
 progress-bar 20
@@ -201,7 +201,7 @@ helm install rancher rancher-stable/rancher \
   --namespace cattle-system \
   --set hostname=console-rancher.local \
   --set replicas=1 \
-  --version 2.7.4 \
+  --version 2.8.5 \
   --create-namespace
 sleep 5
 # Check rancher status
